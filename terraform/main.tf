@@ -25,3 +25,32 @@ module "sandbox" {
 
   account_customizations_name = "sandbox"
 }
+
+module "oceanstack-test-e9ec" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "test@oceanstack.com.ng"
+    AccountName               = "oceanstack-test"
+    ManagedOrganizationalUnit = "Sandbox (ou-7i6x-9nn3xr7d)"
+    SSOUserEmail              = "test@oceanstack.com.ng"
+    SSOUserFirstName          = "Test"
+    SSOUserLastName           = "Account"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
