@@ -55,3 +55,32 @@ module "oceanstack-test-e9ec" {
   account_customizations_name = "sandbox"
 }
 
+module "thenextgenitsystems-info-d8c0" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "info@thenextgenitsystems.com"
+    AccountName               = "thenextgenitsystems-info"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "info@thenextgenitsystems.com"
+    SSOUserFirstName          = "Admin"
+    SSOUserLastName           = "User"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-17T18:32:13.810820"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
