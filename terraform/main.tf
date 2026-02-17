@@ -83,3 +83,32 @@ module "thedigitalhorizontech-admin-7b90" {
 
   account_customizations_name = "sandbox"
 }
+
+module "thenextgenitsystems-info-b227" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "info@thenextgenitsystems.com"
+    AccountName               = "thenextgenitsystems-info"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "info@thenextgenitsystems.com"
+    SSOUserFirstName          = "thenextgenitsystems"
+    SSOUserLastName           = "thenextgenitsystems"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
