@@ -204,3 +204,33 @@ module "thesiliconbridgeit-admin-0fbf" {
 
   account_customizations_name = "sandbox"
 }
+
+module "thelogiccoresystems-admin-4cb0" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@thelogiccoresystems.com"
+    AccountName               = "thelogiccoresystems-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@thelogiccoresystems.com"
+    SSOUserFirstName          = "thelogiccoresystems"
+    SSOUserLastName           = "thelogiccoresystems"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-18T23:18:39.122773"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
