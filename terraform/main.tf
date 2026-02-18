@@ -174,3 +174,33 @@ module "thecyberspheretechnologies-admin-f5c3" {
 
   account_customizations_name = "sandbox"
 }
+
+module "thesiliconbridgeit-admin-0fbf" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@thesiliconbridgeit.com"
+    AccountName               = "thesiliconbridgeit-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@thesiliconbridgeit.com"
+    SSOUserFirstName          = "thesiliconbridgeit"
+    SSOUserLastName           = "thesiliconbridgeit"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-18T22:54:55.853504"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
