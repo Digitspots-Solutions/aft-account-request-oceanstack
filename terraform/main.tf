@@ -114,3 +114,33 @@ module "thedigitalhorizontech-admin-6252" {
 
   account_customizations_name = "sandbox"
 }
+
+module "thedigitalhorizontech-admin-ceaf" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@thedigitalhorizontech.com"
+    AccountName               = "thedigitalhorizontech-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@thedigitalhorizontech.com"
+    SSOUserFirstName          = "thedigitalhorizontech"
+    SSOUserLastName           = "thedigitalhorizontech"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-18T22:14:50.235455"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
