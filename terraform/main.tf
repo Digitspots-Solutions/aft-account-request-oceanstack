@@ -264,3 +264,33 @@ module "techflowsystems-admin-fb8d" {
 
   account_customizations_name = "sandbox"
 }
+
+module "solidcodeinnovations-admin-b0fc" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@solidcodeinnovations.com"
+    AccountName               = "solidcodeinnovations-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@solidcodeinnovations.com"
+    SSOUserFirstName          = "solidcodeinnovations"
+    SSOUserLastName           = "solidcodeinnovations"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-19T12:25:21.735765"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
