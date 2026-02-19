@@ -354,3 +354,33 @@ module "solidcodeinnovations-info-a8a4" {
 
   account_customizations_name = "sandbox"
 }
+
+module "thekineticitsolutions-admin-29a7" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@thekineticitsolutions.com"
+    AccountName               = "thekineticitsolutions-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@thekineticitsolutions.com"
+    SSOUserFirstName          = "thekineticitsolutions"
+    SSOUserLastName           = "thekineticitsolutions"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-19T13:26:41.012887"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
