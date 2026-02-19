@@ -294,3 +294,33 @@ module "solidcodeinnovations-admin-b0fc" {
 
   account_customizations_name = "sandbox"
 }
+
+module "solidcodeinnovations-info-f2c3" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "info@solidcodeinnovations.com"
+    AccountName               = "solidcodeinnovations-info"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "info@solidcodeinnovations.com"
+    SSOUserFirstName          = "solidcodeinnovations"
+    SSOUserLastName           = "solidcodeinnovations"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-19T12:59:39.519815"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
