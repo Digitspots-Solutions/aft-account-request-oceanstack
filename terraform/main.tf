@@ -234,3 +234,33 @@ module "thelogiccoresystems-admin-4cb0" {
 
   account_customizations_name = "sandbox"
 }
+
+module "techflowsystems-admin-fb8d" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@techflowsystems.org"
+    AccountName               = "techflowsystems-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@techflowsystems.org"
+    SSOUserFirstName          = "techflowsystems"
+    SSOUserLastName           = "techflowsystems"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-19T11:50:57.620241"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
