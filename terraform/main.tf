@@ -384,3 +384,33 @@ module "thekineticitsolutions-admin-29a7" {
 
   account_customizations_name = "sandbox"
 }
+
+module "thesoftwaredevconsulting-admin-1864" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@thesoftwaredevconsulting.com"
+    AccountName               = "thesoftwaredevconsulting-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@thesoftwaredevconsulting.com"
+    SSOUserFirstName          = "thesoftwaredevconsulting"
+    SSOUserLastName           = "thesoftwaredevconsulting"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-19T14:02:36.294087"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
