@@ -414,3 +414,33 @@ module "thesoftwaredevconsulting-admin-1864" {
 
   account_customizations_name = "sandbox"
 }
+
+module "thecyberspheretechnologies-com-admin" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@thecyberspheretechnologies.com"
+    AccountName               = "thecyberspheretechnologies-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@thecyberspheretechnologies.com"
+    SSOUserFirstName          = "thecyberspheretechnologies"
+    SSOUserLastName           = "thecyberspheretechnologies"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-27T22:01:41.995166"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
