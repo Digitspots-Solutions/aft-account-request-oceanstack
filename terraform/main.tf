@@ -624,3 +624,33 @@ module "intelli-wave-org-admin" {
 
   account_customizations_name = "sandbox"
 }
+
+module "data-spark-org-admin" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@data-spark.org"
+    AccountName               = "data-spark-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@data-spark.org"
+    SSOUserFirstName          = "data-spark"
+    SSOUserLastName           = "data-spark"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-28T21:56:21.226085"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
