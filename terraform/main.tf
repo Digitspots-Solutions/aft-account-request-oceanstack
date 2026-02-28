@@ -654,3 +654,33 @@ module "data-spark-org-admin" {
 
   account_customizations_name = "sandbox"
 }
+
+module "thecognitionlabs-org-admin" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "admin@thecognitionlabs.org"
+    AccountName               = "thecognitionlabs-admin"
+    ManagedOrganizationalUnit = "Websites Workload (ou-7i6x-pme73pq0)"
+    SSOUserEmail              = "admin@thecognitionlabs.org"
+    SSOUserFirstName          = "thecognitionlabs"
+    SSOUserLastName           = "thecognitionlabs"
+  }
+
+  account_tags = {
+    "Opportunity" = "true"
+    "ManagedBy" = "OpportunityPortal"
+    "ProvisioningRetry" = "2026-02-28T21:56:55.823262"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Opportunity Portal"
+    change_reason       = "Self-service account creation"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
